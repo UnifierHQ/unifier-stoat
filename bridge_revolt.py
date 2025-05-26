@@ -227,6 +227,9 @@ class Revolt(commands.Cog,name='Revolt Support'):
             self.logger = None
             self.compatibility_mode = False
 
+        async def close_client(self):
+            await self.bot.stop()
+
         def dispatch(self, event: str, *args: Any) -> None:
             """Dispatch an event, this is typically used for testing and internals.
 
@@ -560,7 +563,10 @@ class Revolt(commands.Cog,name='Revolt Support'):
                 else:
                     return
 
-            msgdata = await self.bot.bridge.fetch_message(message.id)
+            try:
+                msgdata = await self.bot.bridge.fetch_message(message.id)
+            except ValueError:
+                return
 
             try:
                 await self.bot.bridge.edit(msgdata.id, message.content, message, source='revolt')
