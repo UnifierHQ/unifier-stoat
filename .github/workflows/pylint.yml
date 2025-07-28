@@ -9,6 +9,8 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.12", "3.13"]
+    permissions:
+      contents: read
     steps:
     - name: Download Plugin
       uses: actions/checkout@v4
@@ -51,6 +53,8 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.12", "3.13"]
+    permissions:
+      contents: read
     steps:
     - name: Download Plugin
       uses: actions/checkout@v4
@@ -93,6 +97,8 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.12", "3.13"]
+    permissions:
+      contents: read
     steps:
     - name: Download Plugin
       uses: actions/checkout@v4
@@ -135,6 +141,8 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.12"]
+    permissions:
+      contents: read
     steps:
     - name: Download Plugin
       uses: actions/checkout@v4
@@ -177,6 +185,8 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.12"]
+    permissions:
+      contents: read
     steps:
     - name: Download Plugin
       uses: actions/checkout@v4
@@ -219,6 +229,8 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.12", "3.13"]
+    permissions:
+      contents: read
     steps:
     - name: Download Plugin
       uses: actions/checkout@v4
