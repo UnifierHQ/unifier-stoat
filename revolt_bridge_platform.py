@@ -20,11 +20,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 # This is a service script to provide essential functions such as
 
 from utils import platform_base
-from utils.platform_base import ForceRestart
 import revolt
 import nextcord
 from io import BytesIO
 from typing import Union, Optional
+# from utils.platform_base import ForceRestart
 
 class EmbedField:
     def __init__(self, name, value):
@@ -109,7 +109,9 @@ class RevoltPlatform(platform_base.PlatformBase):
             except:
                 # Something probably went exceptionally wrong here, so we'll have to force reboot
                 try:
-                    raise ForceRestart()
+                    # Still pending implementation
+                    # raise ForceRestart()
+                    raise NameError()
                 except NameError:
                     # This is probably an older version of Unifier, nothing we can do here
                     return False
