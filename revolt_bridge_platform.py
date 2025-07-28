@@ -24,6 +24,7 @@ import revolt
 import nextcord
 from io import BytesIO
 from typing import Union, Optional
+# from utils.platform_base import ForceRestart
 
 class EmbedField:
     def __init__(self, name, value):
@@ -100,7 +101,20 @@ class RevoltPlatform(platform_base.PlatformBase):
         elif type(error) is revolt.errors.HTTPError:
             # if revolt.py is sane, the above statement should cover all of these errors
             # but we'll add this in here just in case it doesn't
-            status_code = int(str(error))
+            try:
+                if "<html>" in str(error) or "</html>" in str(error):
+                    raise ValueError()
+
+                status_code = int(str(error))
+            except:
+                # Something probably went exceptionally wrong here, so we'll have to force reboot
+                try:
+                    # Still pending implementation
+                    # raise ForceRestart()
+                    raise NameError()
+                except NameError:
+                    # This is probably an older version of Unifier, nothing we can do here
+                    return False
             return status_code >= 500 or status_code == 401 or status_code == 403
         return False
 
