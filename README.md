@@ -9,7 +9,7 @@ Unifier Stoat Support</h1>
 > [!IMPORTANT]
 > On October 1, 2025, Revolt rebranded to Stoat. To reflect this, we've changed the modifier's name as well.
 >
-> For technical reasons, the modifier's ID will still be `revolt-support`.
+> For technical reasons, the modifier's ID will still be `revolt`.
 
 ## What is this?
 This is a plugin for Unifier which allows it to work on Stoat, a Discord alternative. This plugin manages the Stoat 
