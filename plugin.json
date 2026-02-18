@@ -3,8 +3,8 @@
   "name": "Stoat Support",
   "description": "Unifier Stoat Support extension (formerly Revolt Support)",
   "version": "v1.6.4",
-  "release": 50,
-  "minimum": 77,
+  "release": 51,
+  "minimum": 76,
   "services": [
     "bridge_platform"
   ],
