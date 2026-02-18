@@ -453,6 +453,10 @@ class RevoltPlatform(platform_base.PlatformBase):
 
             if not me.get_permissions().manage_role:
                 persona.colour = None
+
+            # Prevent @everyoneing
+            content = content.replace("@everyone", "@ everyone")
+        
         if not special:
             if hasattr(self, 'buckets'):
                 await self.handle_ratelimit(bucket)
